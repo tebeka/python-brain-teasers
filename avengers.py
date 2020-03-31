@@ -1,4 +1,3 @@
-
 # Copyright 2020 Miki Tebeka <miki@353solutions.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
