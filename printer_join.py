@@ -13,19 +13,17 @@
 # limitations under the License.
 
 
-import re
-from collections import defaultdict
+from threading import Thread
+from time import sleep
 
 
-def word_freq(text, freqs=None):
-    """Calculate word frequency in text. freqs are previous frequencies"""
-    freqs = defaultdict(int) if freqs is None else freqs
-    for word in [w.lower() for w in re.findall(r'\w+', text)]:
-        freqs[word] += 1
-    return freqs
+def printer():
+    for i in range(3):
+        print(i, end=' ')
+        sleep(0.1)
 
 
-freqs1 = word_freq('Duck season. Duck!')
-freqs2 = word_freq('Rabbit season. Rabbit!')
-print(freqs1)
-print(freqs2)
+thr = Thread(target=printer, daemon=True)
+thr.start()
+thr.join()
+print()  # Add newline

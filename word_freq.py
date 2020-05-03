@@ -14,12 +14,13 @@
 
 
 import re
+from collections import defaultdict
 
 
-def word_freq(text, freqs={}):
-    """Calculate word frquency in text"""
+def word_freq(text, freqs=defaultdict(int)):
+    """Calculate word frequency in text. freqs are previous frequencies"""
     for word in [w.lower() for w in re.findall(r'\w+', text)]:
-        freqs[word] = freqs.get(word, 0) + 1
+        freqs[word] += 1
     return freqs
 
 

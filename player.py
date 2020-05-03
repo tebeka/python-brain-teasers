@@ -14,7 +14,8 @@
 
 
 class Player:
-    count = 0  # Number of players in the Game
+    # Number of players in the Game
+    count = 0
 
     def __init__(self, name):
         self.name = name

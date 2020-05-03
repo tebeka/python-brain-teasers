@@ -23,5 +23,6 @@ def printer():
         sleep(0.1)
 
 
-Thread(target=printer, daemon=True).start()
-print()
+thr = Thread(target=printer, daemon=True)
+thr.start()
+print()  # Add newline
